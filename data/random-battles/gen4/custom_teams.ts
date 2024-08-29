@@ -6,7 +6,6 @@ interface PartialPokemon {
 	moves: string[];
 	ability: string;
 	item: string;
-	gender: string;
 }
 
 
@@ -14,6 +13,9 @@ export class CustomRandomGen4Teams extends RandomGen4Teams {
 
     customRandomSet(
 		species: string | Species,
+		givenMoves: string[],
+		ability: string,
+		item: string,
 		teamDetails: RandomTeamsTypes.TeamDetails = {},
 		isLead = false
 	): RandomTeamsTypes.RandomSet {
@@ -40,9 +42,6 @@ export class CustomRandomGen4Teams extends RandomGen4Teams {
 		const preferredTypes = set.preferredTypes;
 		const preferredType = this.sampleIfArray(preferredTypes) || '';
 
-		let ability = '';
-		let item = undefined;
-
 		const evs = {hp: 85, atk: 85, def: 85, spa: 85, spd: 85, spe: 85};
 		const ivs = {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31};
 
@@ -51,7 +50,7 @@ export class CustomRandomGen4Teams extends RandomGen4Teams {
 
 		// Get moves
 		const moves = this.randomMoveset(types, abilities, teamDetails, species, isLead, movePool,
-			preferredType, role);
+			preferredType, role);  // add givenMoves, POINTER REAL
 		const counter = this.newQueryMoves(moves, species, preferredType, abilities);
 
 		// Get ability
@@ -174,8 +173,8 @@ export class CustomRandomGen4Teams extends RandomGen4Teams {
 				species = this.dex.species.get(mon.pokemon_name);
 				moves = mon.moves;
 				ability = mon.ability;
-				item = mon.item;
-				gender = mon.gender;
+				item = mon.item !== '' ? mon.item : undefined;
+				// POINTER: WE DON'T CARE ABOUT POSSIBLE ABILITIES
 			}
 			else {
 				const baseSpecies = this.sampleNoReplace(baseSpeciesPool);
@@ -236,7 +235,7 @@ export class CustomRandomGen4Teams extends RandomGen4Teams {
 				}
 			}
 
-			const set = this.randomSet(species, teamDetails, pokemon.length === 0);
+			const set = this.customRandomSet(species, teamDetails, pokemon.length === 0);
 
 			// Okay, the set passes, add it to our team
 			pokemon.push(set);

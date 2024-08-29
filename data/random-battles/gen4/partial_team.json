@@ -1,8 +1,8 @@
 [
-    {   "pokemon_name": "name",
+    {   
+        "pokemon_name": "name",
         "moves": [],
         "ability": "ability", 
-        "item": "item", 
-        "gender": ""
+        "item": "item"
     }
 ]
