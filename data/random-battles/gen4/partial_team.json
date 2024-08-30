@@ -1,8 +1,9 @@
 [
-    {   "pokemon_name": "name",
-        "moves": [],
-        "ability": "ability", 
-        "item": "item", 
-        "gender": ""
+    {   
+        "pokemon_name": "venusaur",
+        "moves": ["leechseed"],
+        "ability": "overgrow", 
+        "item": "",
+        "level": 83
     }
 ]

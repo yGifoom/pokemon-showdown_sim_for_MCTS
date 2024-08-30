@@ -25,6 +25,7 @@ tools/modlog/converter.js
 !test/**/*.js
 tools/modlog/**/*.js
 tools/set-import/*.js
+*.js
 
 # visual studio live share
 .vs
