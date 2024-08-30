@@ -1,36 +1,44 @@
-/**
- * Simulator Battle
- * Pokemon Showdown - http://pokemonshowdown.com/
- *
- * This file is where the battle simulation itself happens.
- *
- * The most important part of the simulation is the event system:
- * see the `runEvent` function definition for details.
- *
- * General battle mechanics are in `battle-actions`; move-specific,
- * item-specific, etc mechanics are in the corresponding file in
- * `data`.
- *
- * @license MIT
- */
-
 import { Battle } from "./battle";
+import * as fs from "fs";
 
-export class CustomBattle extends Battle {
+export class CustomBattle{
     
-    static simulate(battle: Battle, player1Actions: string[], player2Actions: string[]): Battle {
+    static simulate(playerActions: string[]): Battle {
+		const jsonString = fs.readFileSync('./simulator_buffer/battle.json', 'utf-8');
 		// Clone the battle object to avoid modifying the original battle
-		const clonedBattle = Object.assign(Object.create(Object.getPrototypeOf(battle)), battle);
-	
-		// Set the actions for each player
-		clonedBattle.sides[0].choice.actions = player1Actions;
-		clonedBattle.sides[1].choice.actions = player2Actions;
-	
-		// Commit the choices and simulate the battle
-		clonedBattle.commitChoices();
-	
+		const battle = Battle.fromJSON(jsonString);
+		if (playerActions.length > 1){
+					// Set the actions for each player
+					// moves are 1-6 for pokemon and 1-4 for moves
+					// everytime order changes, use names
+
+					// when a switch is required format moves like so: ,switch palkia
+					// in this case p2 used uturn earlier, and now switches out to palkia
+					// p1 just needs to pass an empty string.
+					// but when both pokemon faint for esample both have to issue a switch order.
+					// 
+			battle.makeChoices(playerActions[0], playerActions[1]);
+			// if all goes well it also commits the choices and simulate the battle
+		}
+		else if (playerActions.length === 1) {
+			battle.makeChoices(playerActions[0]);
+		}
+		else{
+			console.log("No actions taken, shouldn't happen");
+		}
 		// Return the resulting battle state
-		return clonedBattle;
+		return battle;
 	}
+
+	static write_down(): void {
+		const moves = fs.readFileSync('./simulator_buffer/moves.txt','utf8');
+		const battle = this.simulate(moves.split(","));
+		const towrite = battle.toJSON();
+
+		var util = require('util');
+		fs.writeFileSync('./simulator_buffer/new_battle.json', JSON.stringify(towrite, null, 2) , 'utf-8'); //
+	} 
 	
 }
+CustomBattle.write_down()
+console.log("FINALLY DONE")

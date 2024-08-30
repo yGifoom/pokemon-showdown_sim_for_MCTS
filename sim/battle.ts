@@ -13,7 +13,7 @@
  *
  * @license MIT
  */
-
+//import * as fs from "fs";
 import {Dex, toID} from './dex';
 import {Teams} from './teams';
 import {Field} from './field';
@@ -2801,6 +2801,11 @@ export class Battle {
 		this.endTurn();
 		this.midTurn = false;
 		this.queue.clear();
+		// log the 10th turn battle for testing
+		//if (this.turn === 50){
+		//	var util = require('util');
+		//	fs.writeFileSync('./simulator_buffer/battle.json', JSON.stringify(this, null, 2) , 'utf-8'); // seems to be working
+		//}
 	}
 
 	/**
