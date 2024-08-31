@@ -1,0 +1,194 @@
+[
+    {
+        "name": "Venusaur",
+        "species": "Venusaur",
+        "gender": "",
+        "shiny": true,
+        "level": 83,
+        "moves": [
+            "powerwhip",
+            "leechseed",
+            "substitute",
+            "sludgebomb"
+        ],
+        "ability": "overgrow",
+        "evs": {
+            "hp": 85,
+            "atk": 85,
+            "def": 85,
+            "spa": 85,
+            "spd": 85,
+            "spe": 85
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "item": "Black Sludge",
+        "role": "Staller"
+    },
+    {
+        "name": "Plusle",
+        "species": "Plusle",
+        "gender": "",
+        "shiny": true,
+        "level": 90,
+        "moves": [
+            "batonpass",
+            "thunderbolt",
+            "hiddenpowerice",
+            "nastyplot"
+        ],
+        "ability": "Plus",
+        "evs": {
+            "hp": 85,
+            "atk": 0,
+            "def": 85,
+            "spa": 85,
+            "spd": 85,
+            "spe": 85
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 2,
+            "def": 30,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "item": "Leftovers",
+        "role": "Bulky Setup"
+    },
+    {
+        "name": "Glaceon",
+        "species": "Glaceon",
+        "gender": "",
+        "shiny": true,
+        "level": 88,
+        "moves": [
+            "wish",
+            "protect",
+            "healbell",
+            "icebeam"
+        ],
+        "ability": "Snow Cloak",
+        "evs": {
+            "hp": 85,
+            "atk": 0,
+            "def": 85,
+            "spa": 85,
+            "spd": 85,
+            "spe": 85
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "item": "Leftovers",
+        "role": "Bulky Support"
+    },
+    {
+        "name": "Ninetales",
+        "species": "Ninetales",
+        "gender": "",
+        "shiny": true,
+        "level": 84,
+        "moves": [
+            "energyball",
+            "hypnosis",
+            "nastyplot",
+            "fireblast"
+        ],
+        "ability": "Flash Fire",
+        "evs": {
+            "hp": 85,
+            "atk": 0,
+            "def": 85,
+            "spa": 85,
+            "spd": 85,
+            "spe": 85
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "item": "Life Orb",
+        "role": "Setup Sweeper"
+    },
+    {
+        "name": "Quagsire",
+        "species": "Quagsire",
+        "gender": "",
+        "shiny": true,
+        "level": 90,
+        "moves": [
+            "recover",
+            "waterfall",
+            "encore",
+            "earthquake"
+        ],
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 85,
+            "atk": 85,
+            "def": 85,
+            "spa": 85,
+            "spd": 85,
+            "spe": 85
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "item": "Leftovers",
+        "role": "Bulky Support"
+    },
+    {
+        "name": "Marowak",
+        "species": "Marowak",
+        "gender": "",
+        "shiny": true,
+        "level": 89,
+        "moves": [
+            "firepunch",
+            "stoneedge",
+            "doubleedge",
+            "earthquake"
+        ],
+        "ability": "Rock Head",
+        "evs": {
+            "hp": 85,
+            "atk": 85,
+            "def": 85,
+            "spa": 85,
+            "spd": 85,
+            "spe": 85
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "item": "Thick Club",
+        "role": "Wallbreaker"
+    }
+]
