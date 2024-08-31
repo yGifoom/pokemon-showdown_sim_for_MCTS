@@ -1,1 +1,1 @@
-,switch palkia
+move 1,move 1
